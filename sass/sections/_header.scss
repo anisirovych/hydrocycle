@@ -1,0 +1,222 @@
+.header {
+    .menu-mobile {
+        &__list {
+            width: 243px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+            transform: translateX(-100%);
+            transition: all .3s;
+            position: absolute;
+            z-index: 10;
+            background-color: #ffffff;
+            &--active {
+                transform: translateX(0);
+                transition: all .3s;
+            }
+        }
+        &__item {
+            position: relative;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding-bottom: 25px;
+        }
+        &__link {
+            display: block;
+            padding-left: 53px;
+            padding-top: 36px;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: 24px;
+        }
+        &__img {
+            position: absolute;
+            left: 11px;
+        }
+        &__linewrapper {
+            display: none;
+        }
+        &__line {
+            display: flex;
+            transition: all .3s;
+            background-color: $bcgColor;
+            padding: 14px 0 14px 15px;
+        }
+        &__items {
+            margin-right: 15px;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 24px;
+            @include SFbold;
+        }
+    }
+    &__top {
+        &-category {
+            .menu__btn {
+                display: none;
+                padding: 0;
+            }
+        }
+        &-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 122px;
+            @include SFbold;
+            font-weight: 700;
+        }
+        &-box {
+            display: flex;
+            &__adress {
+                margin-right: 60px;
+                width: 265px;
+                padding-left: 30px;
+                position: relative;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    background-image: url('../img/header/here.svg');
+                    width: 30px;
+                    height: 30px;
+                    left: 0;
+                    top: -10px;
+                }
+            }
+            .user-list {
+                margin-right: 15px;
+                display: flex;
+                align-items: center;
+                &__item {
+                    padding-right: 10px;
+                }
+                .basket {
+                    position: relative;
+                }
+                .basket__num {
+                    position: absolute;
+                    height: 20px;
+                    width: 20px;
+                    @include SFmedium;
+                    font-weight: 500;
+                    line-height: 20px;
+                    font-size: 10px;
+                    color: #ffffff;
+                    background-color: #1C62CD;
+                    border-radius: 50%;
+                    text-align: center;
+                    bottom: -7px;
+                    right: -15px;
+                }
+            }
+        }
+        .category__list {
+            display: flex;
+            .category__list--item + .category__list--item {
+                padding-left: 50px;
+                @include SFmedium;
+            }
+        }
+    }
+    &__bottom {
+        margin-bottom: 80px;
+        &-inner {
+            background-color: $bcgColor;
+            .menu__categories {
+                display: flex;
+                justify-content: space-around;
+                min-height: 53px;
+                &-item {
+                    position: relative;
+                }
+                &-link {
+                    position: relative;
+                    padding: 15px 0 14px;
+                    transition: all .3s;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: 0;
+                        left: auto;
+                        background-color: $linkColor;
+                        height: 3px;
+                        transition: all .3s;
+                        bottom: -2px;
+                        right: 0;
+                    }
+                    &:hover {
+                        color: #000000;
+                        &::before {
+                            width: 100%;
+                            right: auto;
+                            left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media(max-width: 1110px) {
+    .header {
+        &__top {
+            &-box {
+                &__adress {
+                    margin-right: 20px;
+                }
+            }
+            .category__list {
+                .category__list--item + .category__list--item {
+                    padding-left: 25px;
+                }
+            }
+        }
+    }
+}
+@media(max-width: 968px) {
+    .header {
+        .menu-mobile {
+            &__linewrapper {
+                display: block;
+                overflow-x: scroll;
+            }
+            &__line {
+                width: 450px;  
+            }
+            &__list-active {
+                transform: translateX(0);
+            }
+        }
+        &__top {
+            &-category {
+                .category__list {
+                    display: none;
+                }
+                .menu__btn {
+                    display: block;
+                    background-color: transparent;
+                    cursor: pointer;
+                    border: none;
+                    &-line {
+                        background: $mainColor;
+                        border-radius: 3px;
+                        height: 3px;
+                        width: 34px;
+                        margin: 8px 0;
+                    }
+                }
+            }
+        }
+        &__bottom {
+            display: none;
+        }
+    }
+}
+
+@media(max-width: 640px) {
+    .header {
+        &__top {
+            &-box {
+                &__adress {
+                    display: none;
+               }
+           }
+       }
+    }
+}

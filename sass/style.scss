@@ -1,0 +1,18 @@
+@import 'default/fonts';
+@import 'default/vars';
+@import 'default/reset';
+@import 'default/slick.scss';
+@import 'default/default';
+
+//sections
+
+@import 'sections/header';
+@import 'sections/banner';
+@import 'sections/search';
+@import 'sections/categories';
+@import 'sections/products';
+@import 'sections/popular';
+@import 'sections/footer';
+@import 'sections/catalog';
+@import 'sections/product-page';
+@import 'sections/media';

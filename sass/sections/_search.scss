@@ -1,0 +1,91 @@
+.search {
+    &__tabs {
+        margin-bottom: 25px;
+        &-item {
+            padding: 11px 26px 12px;
+            &__active {
+                border-radius: 5px;
+                background-color: $bcgColor;
+                font-weight: 700;
+                @include SFbold;
+            }
+        }
+    }
+    &__content {
+        &-form {
+            display: flex;
+        }
+        &-input {
+            border: none;
+            border-radius: 3px;
+            background-color: $bcgColor;
+            padding: 5px 20px;
+            font-size: 16px;
+            line-height: 19px;
+            width: 100%;
+            &::placeholder {
+                color: #656464;
+            }
+        }
+        &-btn {
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.12em;
+            line-height: 17px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            background-color: $linkColor;
+            @include SFbold;
+            border-radius: 3px;
+            padding: 17px 41px;
+            border: none;
+            margin-left: -3px;
+        }
+        &-item {
+            display: none;
+            &__active {
+                display: block;
+            }
+        }
+    }
+}
+
+@media (max-width: 840px) {
+    .search {
+        .mobile-overflow__noscroll{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+@media (max-width: 640px) {
+   .search {
+       &__content {
+           &-form {
+               position: relative;
+           }
+           &-btn {
+                position: absolute;
+                right: 8px;
+                top: 17px;
+                background-image: url("../img/search.svg");
+                background-repeat: no-repeat;;
+                width: 24px;
+                height: 24px; 
+                font-size: 0;
+                line-height: 0;
+                text-transform: uppercase;
+                padding: 17px;
+                background-color: transparent;
+           }
+           &-input {
+                height: 50px;
+                padding-right: 50px;
+                &::placeholder {
+                    color: $mainColor;
+                }
+           }
+       }
+   }
+}
